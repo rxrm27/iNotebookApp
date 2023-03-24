@@ -48,10 +48,11 @@ const NoteState = (props) =>{
           ]
 
     const [notes, setNotes] = useState(notesInitial)
+
     //Add a Note
     const addNote =(title, description, tag)=>{
       //insert API calles here
-      console.log("adding a new note")
+      //console.log("adding a new note")
       let note = {
         "_id": "6410c12843afd6727af0c3d2",
         "title": title,
@@ -63,8 +64,11 @@ const NoteState = (props) =>{
 //use concat as it will return new array(dont use Push as it will update the array)
       setNotes(notes.concat(note)) 
     }
-    const deleteNote =()=>{
-
+    const deleteNote =(id)=>{
+      //insert API calles here
+      //console.log("delete the note with ID: "+ id);
+      const newNote = notes.filter((note)=>(note._id !== id))
+      setNotes(newNote)
     }
     const editNote =()=>{
 

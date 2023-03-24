@@ -4,11 +4,14 @@ export default function Noteitems(props) {
   const { note } = props;
   return (
     <div className="col-md-3 my-2">
-
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"> {note.title}</h5>
-          <p class="card-text">{note.description} </p>
+      <div className="card">
+        <div className="card-body">
+          <div class="d-flex mb-3">
+            <div class="me-auto p-2"><h5 className="card-title"> {note.title}</h5></div>
+            <div class="p-2"><i className="fa-regular fa-pen-to-square"></i></div>
+            <div class="p-2"><i className="fa-sharp fa-solid fa-trash"></i></div>
+          </div>
+          <p className="card-text">{note.description} </p>
         </div>
       </div>
     </div>

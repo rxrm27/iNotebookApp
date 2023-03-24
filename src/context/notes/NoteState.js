@@ -48,8 +48,29 @@ const NoteState = (props) =>{
           ]
 
     const [notes, setNotes] = useState(notesInitial)
+    //Add a Note
+    const addNote =(title, description, tag)=>{
+      //insert API calles here
+      console.log("adding a new note")
+      let note = {
+        "_id": "6410c12843afd6727af0c3d2",
+        "title": title,
+        "description": description,
+        "tag": tag,
+        "date": "2023-03-14T18:47:04.116Z",
+        "__v": 0
+      }
+//use concat as it will return new array(dont use Push as it will update the array)
+      setNotes(notes.concat(note)) 
+    }
+    const deleteNote =()=>{
+
+    }
+    const editNote =()=>{
+
+    }
     return (
-    <NoteContext.Provider value={{notes, setNotes}}>
+    <NoteContext.Provider value={{notes, addNote, deleteNote, editNote}}>
         {props.children}
     </NoteContext.Provider>
 )

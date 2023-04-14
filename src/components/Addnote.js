@@ -5,7 +5,7 @@ function Addnote() {
     const context = useContext(noteContext)
     const { addNote } = context; //destructring notes from context
     //create a state for onchange function only
-    const [note, setNote] = useState({title:"", description:"", tag:""})
+    const [note, setNote] = useState({title:"", description:"", tag:"personal"})
     // functions
     const handleSubmit =(e)=> {
         e.preventDefault();

@@ -1,13 +1,15 @@
 //starting Point
 const connectToMongo = require("./db");
 const express = require("express");
+var cors = require("cors")
 
 connectToMongo();
 const app = express();
 const port = 5000;
 
 //middleware video #45 time: 3:09
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 //Avaiable Routes
 app.use("/api/auth", require("./routes/auth"));
